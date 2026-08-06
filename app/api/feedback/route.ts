@@ -20,6 +20,8 @@
  *   FEEDBACK_FROM_EMAIL   – verified Resend sender (optional; defaults below)
  */
 
+import { renderFeedbackEmail } from "./email";
+
 /** Delivered here unless FEEDBACK_TO_EMAIL overrides it. */
 const DEFAULT_TO = "admin@codebytwo.com";
 
@@ -106,12 +108,12 @@ export async function POST(request: Request): Promise<Response> {
   const to = process.env.FEEDBACK_TO_EMAIL || DEFAULT_TO;
   const fromAddr = process.env.FEEDBACK_FROM_EMAIL || DEFAULT_FROM;
 
-  const text = [
-    `Type:  ${label}`,
-    `Reply-to:  ${email || "(not provided)"}`,
-    "",
+  const { subject, html, text } = renderFeedbackEmail({
+    label,
+    type,
+    email,
     message,
-  ].join("\n");
+  });
 
   try {
     const res = await fetch("https://api.resend.com/emails", {
@@ -123,7 +125,8 @@ export async function POST(request: Request): Promise<Response> {
       body: JSON.stringify({
         from: fromAddr,
         to: [to],
-        subject: `KidPad feedback — ${label}`,
+        subject,
+        html,
         text,
         ...(email ? { reply_to: email } : {}),
       }),
