@@ -77,18 +77,30 @@ in Next 16), which matches Cloudflare's current `@opennextjs/cloudflare` adapter
 
 ### Local testing
 
-Copy `.env.example` → `.env.local` (the defaults use Cloudflare's "always
-passes" test Turnstile keys) and run `npm run dev`. `next dev` runs the Route
-Handler in-process, so you can submit the form end-to-end once `RESEND_API_KEY`
-is set.
+- **`npm run dev`** — copy `.env.example` → `.env.local` (defaults use
+  Cloudflare's "always passes" test Turnstile keys) and run it. `next dev` runs
+  the Route Handler in-process, so you can submit the form end-to-end once
+  `RESEND_API_KEY` is set.
+- **`npm run preview`** — builds with OpenNext and runs the app in the real
+  **workerd** runtime (closest to production). Put local secrets in `.dev.vars`.
 
 ## Deploy
 
-Deploys on **Cloudflare Pages** via the Next.js adapter (the Pages "Next.js"
-framework preset). The feedback Route Handler ships as a Worker automatically —
-see [Feedback form](#feedback-form) for the required env vars.
+Deployed to **Cloudflare Workers** with the
+[OpenNext](https://opennext.js.org/cloudflare) adapter, which compiles the
+Next.js app — including the dynamic `/api/feedback` route — into a Worker.
+Config lives in `wrangler.jsonc` and `open-next.config.ts`.
 
-> If you instead switch the site to a **static export** (`output: 'export'`),
-> Route Handlers that read the request are unsupported — move the handler to a
-> Cloudflare Pages Function at `functions/api/feedback.ts` (export
-> `onRequestPost`, read secrets from `context.env`).
+In the Cloudflare project's **Build configuration** (Workers Builds, Git-connected):
+
+| Field | Value |
+| --- | --- |
+| Build command | `npx opennextjs-cloudflare build` |
+| Deploy command | `npx wrangler deploy` |
+| Version command | `npx wrangler versions upload` |
+
+> The default `npm run build` (plain `next build`) does **not** produce a Worker
+> — the Build command must be `npx opennextjs-cloudflare build`. The `name` in
+> `wrangler.jsonc` must match the Worker's name.
+
+`npm run deploy` does the same build + deploy from your machine.

@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Must match the Worker name in your Cloudflare Workers Builds project.
+  "name": "kidpad-website",
+  // Entry point produced by `opennextjs-cloudflare build`.
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2024-12-30",
+  // nodejs_compat: OpenNext runs the Next.js server on Node APIs.
+  // global_fetch_strictly_public: outbound fetch() goes over the internet.
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  // Static assets (_next/static, public/*) served straight from the edge.
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
