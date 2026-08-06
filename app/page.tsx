@@ -342,9 +342,15 @@ export default function Home() {
       </section>
 
       <footer className="mt-16 flex flex-col items-center gap-2 text-sm text-ink-soft">
-        <Link href="/privacy" className="font-semibold hover:underline">
-          Privacy Policy
-        </Link>
+        <div className="flex items-center gap-3">
+          <Link href="/privacy" className="font-semibold hover:underline">
+            Privacy Policy
+          </Link>
+          <span aria-hidden="true">·</span>
+          <Link href="/feedback" className="font-semibold hover:underline">
+            Feedback
+          </Link>
+        </div>
         <p>
           © {new Date().getFullYear()}{" "}
           <a
