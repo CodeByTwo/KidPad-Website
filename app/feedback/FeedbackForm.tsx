@@ -4,14 +4,19 @@ import Link from "next/link";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 
 /**
- * Public Turnstile site key. Baked in at build time, so it must be set as a
- * Cloudflare Pages *build* environment variable (NEXT_PUBLIC_ vars are inlined
- * during `next build`). Falls back to Cloudflare's "always passes" test key so
- * local dev works out of the box — pair it with the test *secret* key in the
- * Worker. See README.
+ * Public Turnstile site key. It's inlined at build time, so it MUST be set as a
+ * Cloudflare Pages *Build* variable (NEXT_PUBLIC_ vars are baked in during
+ * `next build`; a runtime variable is read too late and has no effect).
+ *
+ * In development it falls back to Cloudflare's "always passes" test key so local
+ * dev works out of the box. In a production build we deliberately do NOT fall
+ * back: if the key is missing the widget fails to render (and the form can't be
+ * submitted) rather than silently showing the "For testing only" test widget,
+ * which would wave spam straight through.
  */
 const SITE_KEY =
-  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA";
+  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ??
+  (process.env.NODE_ENV === "production" ? "" : "1x00000000000000000000AA");
 const SCRIPT_SRC = "https://challenges.cloudflare.com/turnstile/v0/api.js";
 
 type Status = "idle" | "submitting" | "success" | "error";

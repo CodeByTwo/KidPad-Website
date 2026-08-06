@@ -60,15 +60,20 @@ in Next 16), which matches Cloudflare's current `@opennextjs/cloudflare` adapter
    the sending domain **`mail.kidpad.app`** in Resend (add the DNS records it
    provides). The form sends from `feedback@mail.kidpad.app` by default; override
    with `FEEDBACK_FROM_EMAIL` if needed.
-3. In the **Cloudflare Pages** project → Settings → Environment variables, add:
+3. In the **Cloudflare** project add these. Scope matters — the public site key
+   is inlined at build time, the rest are read by the Worker at request time:
 
-   | Variable | Type | Notes |
-   | --- | --- | --- |
-   | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Plaintext (**Build**) | Public site key — inlined at `next build` |
-   | `TURNSTILE_SECRET_KEY` | Secret | Turnstile secret key |
-   | `RESEND_API_KEY` | Secret | Resend API key |
-   | `FEEDBACK_TO_EMAIL` | Plaintext | Optional; defaults to `admin@codebytwo.com` |
-   | `FEEDBACK_FROM_EMAIL` | Plaintext | Optional; defaults to `feedback@mail.kidpad.app` (domain must be verified in Resend) |
+   | Variable | Scope | Secret? | Notes |
+   | --- | --- | --- | --- |
+   | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | **Build** | No | Public site key, baked into the JS at `next build`. A *runtime* variable has no effect — put it in Build and redeploy. Real keys start `0x…` (`1x…`/`2x…`/`3x…` are test keys). |
+   | `TURNSTILE_SECRET_KEY` | **Runtime** | Yes | Read by the Worker to verify each submission |
+   | `RESEND_API_KEY` | **Runtime** | Yes | Read by the Worker to send the email |
+   | `FEEDBACK_TO_EMAIL` | **Runtime** | No | Optional; defaults to `admin@codebytwo.com` |
+   | `FEEDBACK_FROM_EMAIL` | **Runtime** | No | Optional; defaults to `feedback@mail.kidpad.app` (domain must be verified in Resend) |
+
+   After changing a **Build** variable you must trigger a fresh deployment — its
+   value is frozen into the assets at build time, so a re-run of the running
+   Worker won't pick it up.
 
 ### Local testing
 
