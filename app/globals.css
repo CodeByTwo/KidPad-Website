@@ -59,6 +59,17 @@ body {
 .page-bg {
   min-height: 100dvh;
   background: linear-gradient(180deg, #fff6e5 0%, #ffeecf 55%, #ffe9c7 100%);
+  /* contain the full-bleed carousel so it never adds horizontal page scroll */
+  overflow-x: clip;
+}
+
+/* hide scrollbar while keeping the element scrollable */
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* old Edge/IE */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
 }
 
 /* ------------------------------------------------------------------ */

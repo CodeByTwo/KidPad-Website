@@ -20,8 +20,13 @@ const activities = [
 
 const screenshots = [
   { src: "/screenshots/home.png", alt: "KidPad home screen with big colourful app icons" },
-  { src: "/screenshots/drawing.png", alt: "Finger-painting canvas in KidPad" },
+  { src: "/screenshots/camera.png", alt: "In-app camera viewfinder in KidPad" },
+  { src: "/screenshots/phone.png", alt: "Pretend phone call in KidPad" },
   { src: "/screenshots/clock.png", alt: "Analogue learning clock in KidPad" },
+  { src: "/screenshots/calculator.png", alt: "Colourful calculator in KidPad" },
+  { src: "/screenshots/timer.png", alt: "Pick-a-timer screen in KidPad" },
+  { src: "/screenshots/drawing.png", alt: "Finger-painting canvas in KidPad" },
+  { src: "/screenshots/rescue.png", alt: "Rescue callout in KidPad" },
   { src: "/screenshots/restaurant.png", alt: "Pretend restaurant menu in KidPad" },
   { src: "/screenshots/tickets.png", alt: "Printed travel tickets in KidPad" },
 ];
@@ -49,7 +54,7 @@ const promises = [
 
 export default function Home() {
   return (
-    <main className="mx-auto flex w-full max-w-5xl flex-col items-center px-5 pb-20 text-center">
+    <main className="mx-auto w-full px-5 pb-20 text-center">
       {/* ---------------------------------------------------------------- */}
       {/*  Hero                                                            */}
       {/* ---------------------------------------------------------------- */}
@@ -89,8 +94,8 @@ export default function Home() {
       {/* ---------------------------------------------------------------- */}
       {/*  Screenshots                                                     */}
       {/* ---------------------------------------------------------------- */}
-      <section className="mt-16 w-full sm:mt-24">
-        <div className="flex snap-x snap-mandatory gap-5 overflow-x-auto px-1 pb-4 lg:justify-center">
+      <section className="mt-16 -mx-5 sm:mt-24">
+        <div className="no-scrollbar flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 sm:px-8">
           {screenshots.map((shot) => (
             <div
               key={shot.src}
