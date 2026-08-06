@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/*  KidPad design tokens (mirrors src/theme in the app)               */
+/* ------------------------------------------------------------------ */
+@theme {
+  --font-display: var(--font-baloo), system-ui, sans-serif;
+  --font-body: var(--font-nunito), system-ui, sans-serif;
+
+  /* surfaces */
+  --color-cream: #fff6e5;
+  --color-cream-deep: #ffe9c7;
+  --color-surface: #ffffff;
+  --color-surface-alt: #fff1dc;
+
+  /* ink */
+  --color-ink: #3a2e2a;
+  --color-ink-soft: #7a6e66;
+
+  /* brand */
+  --color-blue: #3da5f4;
+  --color-blue-dark: #2e86d8;
+  --color-coral: #ff6b6b;
+  --color-coral-dark: #ee5765;
+  --color-yellow: #ffc23c;
+  --color-yellow-dark: #f2a91e;
+  --color-green: #3fd08a;
+  --color-green-dark: #2fb675;
+  --color-purple: #9b7be8;
+  --color-pink: #ff8fb1;
+  --color-orange: #ff9f45;
+  --color-teal: #3fd0c8;
+
+  /* rounding (app radius scale) */
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --radius-xl: 36px;
+
+  /* warm shadows (app shadow levels) */
+  --shadow-soft: 0 2px 6px rgba(58, 46, 42, 0.1);
+  --shadow-lift: 0 8px 16px rgba(58, 46, 42, 0.16);
+  --shadow-float: 0 18px 40px rgba(58, 46, 42, 0.18);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  background: #fff6e5; /* solid fallback for overscroll */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* on-brand warm gradient painted on a content-sized wrapper so it spans the
+   whole page top-to-bottom (avoids root-background viewport-sizing quirks) */
+.page-bg {
+  min-height: 100dvh;
+  background: linear-gradient(180deg, #fff6e5 0%, #ffeecf 55%, #ffe9c7 100%);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Phone mockup frame                                                */
+/* ------------------------------------------------------------------ */
+.phone {
+  position: relative;
+  border-radius: 40px;
+  padding: 8px;
+  background: linear-gradient(160deg, #453a35 0%, #2c2320 100%);
+  box-shadow:
+    var(--shadow-float),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.phone-screen {
+  position: relative;
+  overflow: hidden;
+  border-radius: 32px;
+  background: var(--color-cream);
+}
+
+.phone-screen img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
