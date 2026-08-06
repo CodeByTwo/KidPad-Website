@@ -198,8 +198,8 @@ export default function Home() {
         </p>
 
         <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
-          <AppStoreBadge href={APP_STORE_URL} />
-          <GooglePlayBadge href={GOOGLE_PLAY_URL} />
+          <AppStoreBadge href={APP_STORE_URL} location="hero" />
+          <GooglePlayBadge href={GOOGLE_PLAY_URL} location="hero" />
         </div>
         <p className="mt-3 text-sm text-ink-soft">
           For iPhone, iPad &amp; Android · Ages 2–6
@@ -335,8 +335,8 @@ export default function Home() {
             Download KidPad and hand it over with confidence.
           </p>
           <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <AppStoreBadge href={APP_STORE_URL} />
-            <GooglePlayBadge href={GOOGLE_PLAY_URL} />
+            <AppStoreBadge href={APP_STORE_URL} location="cta" />
+            <GooglePlayBadge href={GOOGLE_PLAY_URL} location="cta" />
           </div>
         </div>
       </section>

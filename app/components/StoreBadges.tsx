@@ -1,9 +1,20 @@
+"use client";
+
 /* Official-style App Store / Google Play badges, self-contained as inline SVG
-   so they stay crisp at any size and need no external assets. */
+   so they stay crisp at any size and need no external assets.
+
+   Each badge fires a GA4 `store_link_click` event when tapped (via the GA
+   instance loaded in app/layout.tsx), so store taps show up in Analytics. */
+
+import { sendGAEvent } from "@next/third-parties/google";
+
+type Store = "app_store" | "google_play";
 
 type BadgeProps = {
   href: string;
   className?: string;
+  /** Where the badge sits on the page (e.g. "hero", "cta") — sent to GA. */
+  location?: string;
 };
 
 const badgeBase =
@@ -12,10 +23,28 @@ const badgeBase =
   "hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] " +
   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue";
 
-export function AppStoreBadge({ href, className = "" }: BadgeProps) {
+/**
+ * Log a GA4 event for a store-badge tap. Each store gets its OWN event name
+ * (`app_store_click` / `google_play_click`) so Apple vs Google appear as
+ * separate rows in GA4's Events report with no custom-dimension setup — the
+ * `store`/`location` params are kept too, for slicing in Explorations.
+ *
+ * GA sends events over sendBeacon by default, so the hit still lands even as
+ * the browser navigates away to the store.
+ */
+function trackStoreClick(store: Store, href: string, location?: string) {
+  sendGAEvent("event", `${store}_click`, {
+    store,
+    location: location ?? "unknown",
+    link_url: href,
+  });
+}
+
+export function AppStoreBadge({ href, className = "", location }: BadgeProps) {
   return (
     <a
       href={href}
+      onClick={() => trackStoreClick("app_store", href, location)}
       className={`${badgeBase} ${className}`}
       aria-label="Download KidPad on the Apple App Store"
     >
@@ -41,10 +70,11 @@ export function AppStoreBadge({ href, className = "" }: BadgeProps) {
   );
 }
 
-export function GooglePlayBadge({ href, className = "" }: BadgeProps) {
+export function GooglePlayBadge({ href, className = "", location }: BadgeProps) {
   return (
     <a
       href={href}
+      onClick={() => trackStoreClick("google_play", href, location)}
       className={`${badgeBase} ${className}`}
       aria-label="Get KidPad on Google Play"
     >
