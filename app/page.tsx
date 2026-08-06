@@ -45,8 +45,8 @@ const promises = [
     color: "var(--color-blue)",
   },
   {
-    title: "No ads or purchases",
-    body: "Nothing to buy, no in-app purchases and nothing to delete by accident.",
+    title: "No ads or in-app buys",
+    body: "No advertising and no in-app purchases — and nothing to delete by accident.",
     emoji: "✨",
     color: "var(--color-coral)",
   },
@@ -76,10 +76,9 @@ export default function Home() {
         </p>
 
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink/85 sm:text-xl">
-          A playful little world your child can explore on their own — a home
-          screen of big, brightly coloured apps where every tap leads somewhere
-          harmless. There&apos;s nothing to buy, no one to contact and no way out
-          to the wider internet.
+          A little world of big, colourful pretend apps for your child to
+          explore. Completely safe — no ads, no accounts and no way onto the
+          internet.
         </p>
 
         <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
