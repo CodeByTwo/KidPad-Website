@@ -1,6 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AppStoreBadge, GooglePlayBadge } from "./components/StoreBadges";
+import {
+  DESCRIPTION,
+  PUBLISHER,
+  PUBLISHER_URL,
+  SITE_NAME,
+  SITE_URL,
+} from "./lib/seo";
 
 /* Update these once the store listings are live. */
 const APP_STORE_URL = "#";
@@ -52,9 +59,62 @@ const promises = [
   },
 ];
 
+/**
+ * Structured data (schema.org) so search engines can render a rich result for
+ * the app. No aggregateRating is included — inventing review counts violates
+ * Google's structured-data guidelines. Add it once real store ratings exist.
+ */
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MobileApplication",
+      "@id": `${SITE_URL}/#app`,
+      name: SITE_NAME,
+      description: DESCRIPTION,
+      url: SITE_URL,
+      image: `${SITE_URL}/icon.png`,
+      applicationCategory: "EducationalApplication",
+      operatingSystem: "iOS, iPadOS, Android",
+      inLanguage: "en-GB",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "GBP",
+      },
+      audience: {
+        "@type": "PeopleAudience",
+        suggestedMinAge: 2,
+        suggestedMaxAge: 6,
+      },
+      screenshot: screenshots.map((s) => `${SITE_URL}${s.src}`),
+      publisher: { "@id": `${PUBLISHER_URL}/#org` },
+    },
+    {
+      "@type": "Organization",
+      "@id": `${PUBLISHER_URL}/#org`,
+      name: PUBLISHER,
+      url: PUBLISHER_URL,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: SITE_NAME,
+      description: DESCRIPTION,
+      inLanguage: "en-GB",
+      publisher: { "@id": `${PUBLISHER_URL}/#org` },
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <main className="mx-auto w-full px-5 pb-20 text-center">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* ---------------------------------------------------------------- */}
       {/*  Hero                                                            */}
       {/* ---------------------------------------------------------------- */}

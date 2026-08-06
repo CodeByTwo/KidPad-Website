@@ -3,9 +3,19 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — KidPad",
+  title: "Privacy Policy",
   description:
     "KidPad's privacy policy. Everything stays on the device — no accounts, no tracking, and nothing is sent to any server.",
+  alternates: {
+    canonical: "/privacy",
+  },
+  openGraph: {
+    title: "Privacy Policy · KidPad",
+    description:
+      "KidPad's privacy policy. Everything stays on the device — no accounts, no tracking, and nothing is sent to any server.",
+    url: "/privacy",
+    type: "article",
+  },
 };
 
 const CONTACT_EMAIL = "admin@codebytwo.com";
