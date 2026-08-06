@@ -59,6 +59,49 @@ const promises = [
   },
 ];
 
+/*
+ * FAQ copy. The visible answers below MUST stay identical to the text sent to
+ * search engines in the FAQPage schema, or Google will drop the rich result —
+ * both read from this one array, so keep it that way.
+ */
+const faqs = [
+  {
+    question: "What age is KidPad for?",
+    answer:
+      "KidPad is designed for young children aged roughly 2 to 6. The big, colourful buttons and simple pretend-play activities suit toddlers and preschoolers who are still learning to tap, swipe and explore on their own.",
+  },
+  {
+    question: "Is KidPad safe for kids?",
+    answer:
+      "Yes. KidPad has no ads, no in-app purchases, no accounts and no links out to the web, so there is nothing for a child to stumble into. A PIN-locked settings screen lets you choose which activities appear and mute all sound.",
+  },
+  {
+    question: "Does KidPad work offline?",
+    answer:
+      "Completely. KidPad runs fully offline and never connects to the internet, so you can hand it over on a plane, in the car or anywhere with no signal — and know nothing is being sent anywhere.",
+  },
+  {
+    question: "Does KidPad collect any personal data?",
+    answer:
+      "No. KidPad collects no personal information and has no analytics or tracking. Anything created in the app — drawings, photos and settings — stays on the device and is never uploaded. You can read the full details on our privacy page.",
+  },
+  {
+    question: "Is KidPad free?",
+    answer:
+      "KidPad is a one-off download with no advertising and no in-app purchases, so there is nothing to buy inside the app and no way for a child to spend money by accident.",
+  },
+  {
+    question: "What devices does KidPad run on?",
+    answer:
+      "KidPad is available for iPhone and iPad on the App Store, and for Android phones and tablets on Google Play.",
+  },
+  {
+    question: "What can children do in KidPad?",
+    answer:
+      "KidPad has nine self-contained activities: drawing, a pretend camera and phone, a restaurant, trains and buses, a rescue game, a learning clock, a timer and a calculator. Each one is playful pretend-play that quietly teaches along the way.",
+  },
+];
+
 /**
  * Structured data (schema.org) so search engines can render a rich result for
  * the app. No aggregateRating is included — inventing review counts violates
@@ -104,6 +147,19 @@ const jsonLd = {
       description: DESCRIPTION,
       inLanguage: "en-GB",
       publisher: { "@id": `${PUBLISHER_URL}/#org` },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${SITE_URL}/#faq`,
+      inLanguage: "en-GB",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer,
+        },
+      })),
     },
   ],
 };
@@ -234,6 +290,35 @@ export default function Home() {
                 {p.body}
               </p>
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------------------- */}
+      {/*  Frequently asked questions                                      */}
+      {/* ---------------------------------------------------------------- */}
+      <section className="mt-16 w-full sm:mt-24">
+        <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
+          Frequently asked questions
+        </h2>
+
+        <div className="mx-auto mt-8 grid max-w-2xl gap-3">
+          {faqs.map((f) => (
+            <details
+              key={f.question}
+              className="group rounded-[var(--radius-lg)] bg-surface/80 p-5 text-left shadow-[var(--shadow-soft)] ring-1 ring-[rgba(58,46,42,0.06)]"
+            >
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-3 font-display font-semibold text-ink [&::-webkit-details-marker]:hidden">
+                {f.question}
+                <span
+                  aria-hidden="true"
+                  className="shrink-0 text-ink-soft transition-transform duration-200 group-open:rotate-45"
+                >
+                  +
+                </span>
+              </summary>
+              <p className="mt-3 leading-relaxed text-ink-soft">{f.answer}</p>
+            </details>
           ))}
         </div>
       </section>
