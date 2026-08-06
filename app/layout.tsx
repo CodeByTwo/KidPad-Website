@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Baloo_2, Nunito } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import {
   DESCRIPTION,
@@ -94,6 +95,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full">
         <div className="page-bg">{children}</div>
       </body>
+      <GoogleAnalytics gaId="G-755FYMV4EG" />
     </html>
   );
 }
