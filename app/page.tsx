@@ -13,6 +13,8 @@ import {
 const APP_STORE_URL = "#";
 const GOOGLE_PLAY_URL = "#";
 
+const SUPPORT_EMAIL = "support@kidpad.app";
+
 const activities = [
   { name: "Drawing", emoji: "🎨", color: "var(--color-purple)" },
   { name: "Camera", emoji: "📷", color: "var(--color-blue)" },
@@ -107,6 +109,11 @@ const faqs = [
     answer:
       "KidPad has nine self-contained activities: drawing, a pretend camera and phone, a restaurant, trains and buses, a rescue game, a learning clock, a timer and a calculator. Each one is playful pretend-play that quietly teaches along the way.",
   },
+  {
+    question: "How do I suggest a feature or report a problem?",
+    answer:
+      `We'd love to hear from you. Use the feedback form on our website to send a feature request, report a bug, or just say hello — every message reaches the KidPad team directly. You can also email us at ${SUPPORT_EMAIL}.`,
+  },
 ];
 
 /**
@@ -173,6 +180,32 @@ const jsonLd = {
     },
   ],
 };
+
+/*
+ * Render a FAQ answer, turning the support email into a mailto link. The raw
+ * `answer` string above stays the source of truth for the FAQPage schema — the
+ * anchor's text is the same email, so the visible and structured text still
+ * match (Google compares text content, not markup).
+ */
+function renderAnswer(answer: string) {
+  const parts = answer.split(SUPPORT_EMAIL);
+  if (parts.length === 1) return answer;
+
+  return parts.flatMap((part, i) =>
+    i === 0
+      ? [part]
+      : [
+          <a
+            key={i}
+            href={`mailto:${SUPPORT_EMAIL}`}
+            className="font-semibold text-ink hover:underline"
+          >
+            {SUPPORT_EMAIL}
+          </a>,
+          part,
+        ],
+  );
+}
 
 export default function Home() {
   return (
@@ -360,7 +393,9 @@ export default function Home() {
                   +
                 </span>
               </summary>
-              <p className="mt-3 leading-relaxed text-ink-soft">{f.answer}</p>
+              <p className="mt-3 leading-relaxed text-ink-soft">
+                {renderAnswer(f.answer)}
+              </p>
             </details>
           ))}
         </div>
@@ -391,6 +426,15 @@ export default function Home() {
             >
               Follow along on Instagram
             </a>
+          </p>
+          <p className="mt-2 text-[15px] text-ink-soft">
+            Got an idea or spotted a bug?{" "}
+            <Link
+              href="/feedback"
+              className="font-semibold text-ink hover:underline"
+            >
+              Send us your feedback
+            </Link>
           </p>
         </div>
       </section>
