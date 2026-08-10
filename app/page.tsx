@@ -95,9 +95,9 @@ const faqs = [
       "No. KidPad collects no personal information and has no analytics or tracking. Anything created in the app — drawings, photos and settings — stays on the device and is never uploaded. You can read the full details on our privacy page.",
   },
   {
-    question: "Is KidPad free?",
+    question: "How much does KidPad cost?",
     answer:
-      "KidPad is a one-off download with no advertising and no in-app purchases, so there is nothing to buy inside the app and no way for a child to spend money by accident.",
+      "KidPad is a one-off purchase of £2.99 — shown in your local currency outside the UK. There are no subscriptions, no advertising and no in-app purchases, so you pay once and there is nothing more to buy inside the app and no way for a child to spend money by accident.",
   },
   {
     question: "What devices does KidPad run on?",
@@ -136,8 +136,9 @@ const jsonLd = {
       inLanguage: "en-GB",
       offers: {
         "@type": "Offer",
-        price: "0",
+        price: "2.99",
         priceCurrency: "GBP",
+        availability: "https://schema.org/InStock",
       },
       audience: {
         "@type": "PeopleAudience",
