@@ -97,3 +97,35 @@ body {
   width: 100%;
   height: auto;
 }
+
+/* ------------------------------------------------------------------ */
+/*  Tablet mockup frame (landscape)                                   */
+/* ------------------------------------------------------------------ */
+.tablet {
+  position: relative;
+  border-radius: 34px;
+  padding: 14px;
+  background: linear-gradient(160deg, #453a35 0%, #2c2320 100%);
+  box-shadow:
+    var(--shadow-float),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.tablet-screen {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--color-cream);
+  /* The raw iPad captures place the status-bar clock/battery hard into the
+     corners. Their background is exactly --color-cream, so inset the shot in a
+     matching cream mat — the rounded corners then round over cream, not the
+     indicators, with no visible seam. */
+  padding: 2.8%;
+}
+
+.tablet-screen img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}

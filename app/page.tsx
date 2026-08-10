@@ -38,6 +38,13 @@ const screenshots = [
   { src: "/screenshots/tickets.png", alt: "Printed travel tickets in KidPad" },
 ];
 
+const tabletShots = [
+  { src: "/screenshots/tablet/home.png", alt: "KidPad home screen on an iPad, filling the wider tablet display" },
+  { src: "/screenshots/tablet/restaurant.png", alt: "Pretend restaurant in KidPad on a tablet, with the menu and order side by side" },
+  { src: "/screenshots/tablet/clock.png", alt: "Learning clock in KidPad on a tablet, clock face and digital time shown together" },
+  { src: "/screenshots/tablet/drawing.png", alt: "Finger-painting canvas in KidPad using the full width of a tablet" },
+];
+
 const promises = [
   {
     title: "Private & offline",
@@ -130,7 +137,9 @@ const jsonLd = {
         suggestedMinAge: 2,
         suggestedMaxAge: 6,
       },
-      screenshot: screenshots.map((s) => `${SITE_URL}${s.src}`),
+      screenshot: [...screenshots, ...tabletShots].map(
+        (s) => `${SITE_URL}${s.src}`,
+      ),
       sameAs: ["https://instagram.com/kidpad.app"],
       publisher: { "@id": `${PUBLISHER_URL}/#org` },
     },
@@ -223,6 +232,39 @@ export default function Home() {
                   alt={shot.alt}
                   width={720}
                   height={1565}
+                  className="w-full"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------------------- */}
+      {/*  Great on tablets too                                            */}
+      {/* ---------------------------------------------------------------- */}
+      <section className="mt-16 w-full sm:mt-24">
+        <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
+          Made for tablets too
+        </h2>
+        <p className="mx-auto mt-3 max-w-xl text-ink-soft">
+          KidPad isn&apos;t just for phones. On an iPad or Android tablet every
+          activity stretches to fill the bigger screen — perfect for little
+          hands to explore.
+        </p>
+
+        <div className="no-scrollbar -mx-5 mt-8 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 sm:px-8">
+          {tabletShots.map((shot) => (
+            <div
+              key={shot.src}
+              className="tablet w-[300px] shrink-0 snap-center sm:w-[420px]"
+            >
+              <div className="tablet-screen">
+                <Image
+                  src={shot.src}
+                  alt={shot.alt}
+                  width={2360}
+                  height={1640}
                   className="w-full"
                 />
               </div>
