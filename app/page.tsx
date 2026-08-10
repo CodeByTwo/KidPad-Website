@@ -131,6 +131,7 @@ const jsonLd = {
         suggestedMaxAge: 6,
       },
       screenshot: screenshots.map((s) => `${SITE_URL}${s.src}`),
+      sameAs: ["https://instagram.com/kidpad.app"],
       publisher: { "@id": `${PUBLISHER_URL}/#org` },
     },
     {
@@ -338,6 +339,17 @@ export default function Home() {
             <AppStoreBadge href={APP_STORE_URL} location="cta" />
             <GooglePlayBadge href={GOOGLE_PLAY_URL} location="cta" />
           </div>
+          <p className="mt-6 text-[15px] text-ink-soft">
+            Not ready yet?{" "}
+            <a
+              href="https://instagram.com/kidpad.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-ink hover:underline"
+            >
+              Follow along on Instagram
+            </a>
+          </p>
         </div>
       </section>
 
@@ -350,6 +362,31 @@ export default function Home() {
           <Link href="/feedback" className="font-semibold hover:underline">
             Feedback
           </Link>
+          <span aria-hidden="true">·</span>
+          <a
+            href="https://instagram.com/kidpad.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="KidPad on Instagram"
+            className="inline-flex items-center gap-2 text-base font-semibold hover:underline"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
+            Instagram
+          </a>
         </div>
         <p>
           © {new Date().getFullYear()}{" "}
