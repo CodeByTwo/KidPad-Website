@@ -19,3 +19,21 @@ export const DESCRIPTION =
 
 export const PUBLISHER = "CodeByTwo";
 export const PUBLISHER_URL = "https://codebytwo.com";
+
+/**
+ * Build a schema.org BreadcrumbList for a sub-page, so search engines can show
+ * a "KidPad › Privacy Policy" trail in results. Pass the trail root-first; each
+ * `path` is joined to SITE_URL ("" for the home page).
+ */
+export function breadcrumbJsonLd(trail: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: trail.map((crumb, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: crumb.name,
+      item: `${SITE_URL}${crumb.path}`,
+    })),
+  };
+}

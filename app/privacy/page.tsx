@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { SITE_NAME, breadcrumbJsonLd } from "../lib/seo";
+
+const breadcrumb = breadcrumbJsonLd([
+  { name: SITE_NAME, path: "" },
+  { name: "Privacy Policy", path: "/privacy" },
+]);
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -24,6 +30,10 @@ const LAST_UPDATED = "6 August 2026";
 export default function PrivacyPolicy() {
   return (
     <main className="mx-auto w-full max-w-2xl px-5 pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       {/* header */}
       <div className="flex flex-col items-center pt-14 text-center sm:pt-20">
         <Link href="/" className="inline-flex flex-col items-center">

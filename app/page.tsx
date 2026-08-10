@@ -16,15 +16,69 @@ const GOOGLE_PLAY_URL = "#";
 const SUPPORT_EMAIL = "support@kidpad.app";
 
 const activities = [
-  { name: "Drawing", emoji: "🎨", color: "var(--color-purple)" },
-  { name: "Camera", emoji: "📷", color: "var(--color-blue)" },
-  { name: "Restaurant", emoji: "🍎", color: "var(--color-orange)" },
-  { name: "Trains & Buses", emoji: "🚆", color: "var(--color-blue-dark)" },
-  { name: "Rescue", emoji: "🚑", color: "var(--color-coral)" },
-  { name: "Phone", emoji: "📞", color: "var(--color-teal)" },
-  { name: "Clock", emoji: "🕓", color: "var(--color-pink)" },
-  { name: "Timer", emoji: "⏱️", color: "var(--color-teal)" },
-  { name: "Calculator", emoji: "🔢", color: "var(--color-green)" },
+  {
+    name: "Drawing",
+    emoji: "🎨",
+    color: "var(--color-purple)",
+    blurb:
+      "A big finger-painting canvas where little ones scribble, colour and draw in bright colours — endless creativity with no mess and no clean-up.",
+  },
+  {
+    name: "Camera",
+    emoji: "📷",
+    color: "var(--color-blue)",
+    blurb:
+      "A safe pretend camera for kids to snap photos that stay in the app's own private gallery — never your phone's camera roll.",
+  },
+  {
+    name: "Restaurant",
+    emoji: "🍎",
+    color: "var(--color-orange)",
+    blurb:
+      "A pretend-play restaurant where children take orders and serve up food, quietly practising choosing, counting and taking turns.",
+  },
+  {
+    name: "Trains & Buses",
+    emoji: "🚆",
+    color: "var(--color-blue-dark)",
+    blurb:
+      "Print pretend tickets and set off on a journey — a trains-and-buses travel game that turns waiting rooms and long car trips into adventures.",
+  },
+  {
+    name: "Rescue",
+    emoji: "🚑",
+    color: "var(--color-coral)",
+    blurb:
+      "Answer the call and send the ambulance, fire engine and police car — an emergency-vehicles rescue game full of friendly problem-solving.",
+  },
+  {
+    name: "Phone",
+    emoji: "📞",
+    color: "var(--color-teal)",
+    blurb:
+      "A pretend phone for kids to “call” family and friends — all the fun of a toy phone, with no real numbers, contacts or bills.",
+  },
+  {
+    name: "Clock",
+    emoji: "🕓",
+    color: "var(--color-pink)",
+    blurb:
+      "A friendly learning clock that helps children start telling the time, with the clock face and digital time shown side by side.",
+  },
+  {
+    name: "Timer",
+    emoji: "⏱️",
+    color: "var(--color-teal)",
+    blurb:
+      "A simple visual timer children can set themselves — brilliant for tidy-up time, sharing turns or a two-minute countdown.",
+  },
+  {
+    name: "Calculator",
+    emoji: "🔢",
+    color: "var(--color-green)",
+    blurb:
+      "A colourful first calculator for tapping, counting and getting to know numbers — playful early maths with none of the pressure.",
+  },
 ];
 
 const screenshots = [
@@ -319,11 +373,11 @@ export default function Home() {
           teaches along the way.
         </p>
 
-        <ul className="mx-auto mt-8 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-3">
+        <ul className="mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {activities.map((a) => (
             <li
               key={a.name}
-              className="flex items-center gap-3 rounded-[var(--radius-lg)] bg-surface/80 p-3 text-left shadow-[var(--shadow-soft)] ring-1 ring-[rgba(58,46,42,0.06)]"
+              className="flex gap-3 rounded-[var(--radius-lg)] bg-surface/80 p-4 text-left shadow-[var(--shadow-soft)] ring-1 ring-[rgba(58,46,42,0.06)]"
             >
               <span
                 className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[var(--radius-md)] text-xl"
@@ -332,9 +386,14 @@ export default function Home() {
               >
                 {a.emoji}
               </span>
-              <span className="font-display font-semibold text-ink">
-                {a.name}
-              </span>
+              <div>
+                <h3 className="font-display font-semibold text-ink">
+                  {a.name}
+                </h3>
+                <p className="mt-1 text-sm leading-relaxed text-ink-soft">
+                  {a.blurb}
+                </p>
+              </div>
             </li>
           ))}
         </ul>
