@@ -10,7 +10,7 @@ import {
 } from "./lib/seo";
 
 /* Update these once the store listings are live. */
-const APP_STORE_URL = "#"; // TODO: awaiting Apple App Store listing
+const APP_STORE_URL = "https://apps.apple.com/us/app/kidpad/id6795081638";
 const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.codebytwo.kidpad";
 
 const SUPPORT_EMAIL = "support@kidpad.app";
