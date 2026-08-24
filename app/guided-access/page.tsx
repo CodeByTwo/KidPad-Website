@@ -261,6 +261,18 @@ export default function GuidedAccessGuide() {
         . Exact wording and menu names can vary slightly between iOS versions.
       </p>
 
+      {/* cross-link to Android */}
+      <p className="mt-6 text-center text-sm text-ink-soft">
+        On an Android phone or tablet instead?{" "}
+        <Link
+          href="/app-pinning"
+          className="font-semibold text-blue-dark hover:underline"
+        >
+          See the App Pinning guide
+        </Link>
+        .
+      </p>
+
       <div className="mt-10 text-center">
         <Link
           href="/"

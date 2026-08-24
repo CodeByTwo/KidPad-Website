@@ -505,6 +505,10 @@ export default function Home() {
             Guided Access
           </Link>
           <span aria-hidden="true">·</span>
+          <Link href="/app-pinning" className="font-semibold hover:underline">
+            App Pinning
+          </Link>
+          <span aria-hidden="true">·</span>
           <Link href="/privacy" className="font-semibold hover:underline">
             Privacy Policy
           </Link>

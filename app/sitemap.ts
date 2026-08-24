@@ -18,6 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${SITE_URL}/app-pinning`,
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.6,
+    },
+    {
       url: `${SITE_URL}/privacy`,
       lastModified,
       changeFrequency: "yearly",
