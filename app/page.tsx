@@ -499,34 +499,33 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="mt-16 flex flex-col items-center gap-2 text-sm text-ink-soft">
-        <div className="flex items-center gap-3">
+      <footer className="mt-16 flex flex-col items-center gap-5 text-sm text-ink-soft">
+        <nav
+          aria-label="Footer"
+          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3"
+        >
           <Link href="/guided-access" className="font-semibold hover:underline">
             Guided Access
           </Link>
-          <span aria-hidden="true">·</span>
           <Link href="/app-pinning" className="font-semibold hover:underline">
             App Pinning
           </Link>
-          <span aria-hidden="true">·</span>
           <Link href="/privacy" className="font-semibold hover:underline">
             Privacy Policy
           </Link>
-          <span aria-hidden="true">·</span>
           <Link href="/feedback" className="font-semibold hover:underline">
             Feedback
           </Link>
-          <span aria-hidden="true">·</span>
           <a
             href="https://instagram.com/kidpad.app"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="KidPad on Instagram"
-            className="inline-flex items-center gap-2 text-base font-semibold hover:underline"
+            className="inline-flex items-center gap-1.5 font-semibold hover:underline"
           >
             <svg
-              width="20"
-              height="20"
+              width="18"
+              height="18"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -541,8 +540,8 @@ export default function Home() {
             </svg>
             Instagram
           </a>
-        </div>
-        <p>
+        </nav>
+        <p className="text-center">
           © {new Date().getFullYear()}{" "}
           <a
             href="https://codebytwo.com"
