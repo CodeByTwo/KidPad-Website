@@ -159,6 +159,11 @@ const faqs = [
       "KidPad is available for iPhone and iPad on the App Store, and for Android phones and tablets on Google Play.",
   },
   {
+    question: "Can I stop my child leaving KidPad or tapping into other apps?",
+    answer:
+      "Yes. Both iOS and Android have a built-in mode that locks the device to a single app until you enter a passcode — Guided Access on iPhone and iPad, and App Pinning on Android. It takes about a minute to set up and means your child can't exit KidPad, open other apps or reach device settings. We have step-by-step guides for Guided Access and App Pinning.",
+  },
+  {
     question: "What can children do in KidPad?",
     answer:
       "KidPad has nine self-contained activities: drawing, a pretend camera and phone, a restaurant, trains and buses, a rescue game, a learning clock, a timer and a calculator. Each one is playful pretend-play that quietly teaches along the way.",
@@ -237,29 +242,52 @@ const jsonLd = {
 };
 
 /*
- * Render a FAQ answer, turning the support email into a mailto link. The raw
- * `answer` string above stays the source of truth for the FAQPage schema — the
- * anchor's text is the same email, so the visible and structured text still
- * match (Google compares text content, not markup).
+ * Phrases inside FAQ answers that should render as links. Each anchor's visible
+ * text is identical to the phrase in the raw `answer` string, so the FAQPage
+ * schema (built from those raw strings) still matches the visible text — Google
+ * compares text content, not markup.
+ */
+const INLINE_LINKS: { text: string; href: string; external: boolean }[] = [
+  { text: SUPPORT_EMAIL, href: `mailto:${SUPPORT_EMAIL}`, external: true },
+  { text: "Guided Access", href: "/guided-access", external: false },
+  { text: "App Pinning", href: "/app-pinning", external: false },
+];
+
+/*
+ * Render a FAQ answer, turning any INLINE_LINKS phrase into a link. Splitting on
+ * a capturing regex keeps the matched phrases interleaved with the surrounding
+ * text so the visible copy stays byte-for-byte identical to the raw answer.
  */
 function renderAnswer(answer: string) {
-  const parts = answer.split(SUPPORT_EMAIL);
-  if (parts.length === 1) return answer;
-
-  return parts.flatMap((part, i) =>
-    i === 0
-      ? [part]
-      : [
-          <a
-            key={i}
-            href={`mailto:${SUPPORT_EMAIL}`}
-            className="font-semibold text-ink hover:underline"
-          >
-            {SUPPORT_EMAIL}
-          </a>,
-          part,
-        ],
+  const pattern = new RegExp(
+    `(${INLINE_LINKS.map((l) =>
+      l.text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
+    ).join("|")})`,
+    "g",
   );
+
+  return answer.split(pattern).map((segment, i) => {
+    const link = INLINE_LINKS.find((l) => l.text === segment);
+    if (!link) return segment;
+
+    return link.external ? (
+      <a
+        key={i}
+        href={link.href}
+        className="font-semibold text-ink hover:underline"
+      >
+        {segment}
+      </a>
+    ) : (
+      <Link
+        key={i}
+        href={link.href}
+        className="font-semibold text-ink hover:underline"
+      >
+        {segment}
+      </Link>
+    );
+  });
 }
 
 export default function Home() {
@@ -502,7 +530,7 @@ export default function Home() {
       <footer className="mt-16 flex flex-col items-center gap-5 text-sm text-ink-soft">
         <nav
           aria-label="Footer"
-          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3"
+          className="flex w-full flex-wrap items-center justify-center gap-x-6 gap-y-3"
         >
           <Link href="/guided-access" className="font-semibold hover:underline">
             Guided Access
