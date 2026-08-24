@@ -501,6 +501,10 @@ export default function Home() {
 
       <footer className="mt-16 flex flex-col items-center gap-2 text-sm text-ink-soft">
         <div className="flex items-center gap-3">
+          <Link href="/guided-access" className="font-semibold hover:underline">
+            Guided Access
+          </Link>
+          <span aria-hidden="true">·</span>
           <Link href="/privacy" className="font-semibold hover:underline">
             Privacy Policy
           </Link>
