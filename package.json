@@ -12,9 +12,9 @@
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy"
   },
   "dependencies": {
-    "@next/third-parties": "^16.3.0",
-    "@opennextjs/cloudflare": "^1.20.2",
-    "next": "16.3.0",
+    "@next/third-parties": "^16.4.6",
+    "@opennextjs/cloudflare": "^1.20.18",
+    "next": "16.4.6",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },
@@ -24,9 +24,14 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.3.0",
+    "eslint-config-next": "16.4.6",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "wrangler": "^4.119.0"
+    "wrangler": "^4.166.0"
+  },
+  "overrides": {
+    "@opennextjs/cloudflare": {
+      "glob": "^14.0.6"
+    }
   }
 }
