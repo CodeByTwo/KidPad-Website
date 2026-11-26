@@ -51,7 +51,7 @@ Stories are 1–2 frames. Use 2 when there's a mini-sequence, e.g. a question th
 UK English. Warm, playful, reassuring, written for parents. Plain and human, not salesy or AI-polished. Avoid "unlock", "elevate", "game-changer", "dive in", "look no further" and "in today's world". Use 0–2 emojis in captions.
 
 - **Captions:** 40–120 words. Hook in the first line, short paragraphs, light call to action at the end.
-- **Hashtags:** in `first_comment`, not the caption. Use 8–12 tags, mixing broad (#toddleractivities #preschoollearning #kidsapps #parentingtips) with niche (#pretendplay #learningthroughplay #screentimedoneright #ukparents #toddlermum #playbasedlearning). Rotate them.
+- **Hashtags:** Buffer's free plan can't post first comments, so put them at the end of the caption after two lines containing just `.`. Keep `first_comment` in the spec as the record. Use 8–12 tags, mixing broad (#toddleractivities #preschoollearning #kidsapps #parentingtips) with niche (#pretendplay #learningthroughplay #screentimedoneright #ukparents #toddlermum #playbasedlearning). Rotate them.
 - **On-image text:** headlines of 3–9 words max and bodies of one short sentence. Wrap the punchline in `<em>` for the accent colour.
 
 ## Spec format (`posts/YYYY-MM-DD/spec.json`)
