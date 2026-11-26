@@ -1,0 +1,19 @@
+{
+ "id": "2026-11-26",
+ "pillar": "introduction",
+ "feed": {
+  "kind": "single",
+  "slides": [
+   {"layout":"spotlight","activity":"home","accent":"yellow","eyebrow":"Hello from KidPad","headline":"Nine little worlds, <em>one happy tablet</em>","body":"Pretend play for ages 2 to 6. Works offline, no ads.","emoji":"👋"}
+  ],
+  "caption": "Hello! We're KidPad 👋\n\nKidPad is a pretend-play app for little ones aged about 2 to 6. Nine activities live on one bright home screen: a restaurant to run, train tickets to print, rescue callouts to answer, a clock, a timer, a calculator, a phone, a camera and a no-mess drawing canvas.\n\nWe built it to be the app you can hand over without hovering. It works fully offline, there are no ads, no accounts and nothing to buy inside. Settings sit behind a grown-up PIN.\n\nOne price, £2.99, on iPhone, iPad and Android. Link in bio.",
+  "first_comment": "#kidpad #pretendplay #toddleractivities #preschoollearning #kidsapps #learningthroughplay #screentimedoneright #ukparents #toddlermum #playbasedlearning #parentingtips",
+  "alt": ["KidPad home screen on a phone showing nine colourful activity icons, with the headline Nine little worlds, one happy tablet"]
+ },
+ "story": {
+  "slides": [
+   {"layout":"question","activity":"home","accent":"blue","emoji":"👋","headline":"We're new here! Say hi to KidPad","body":"Pretend play for ages 2–6. Tap the link to have a look."}
+  ],
+  "alt": ["Blue card reading We're new here! Say hi to KidPad"]
+ }
+}
