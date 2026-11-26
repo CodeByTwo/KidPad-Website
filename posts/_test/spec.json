@@ -1,0 +1,21 @@
+{
+ "id": "_test",
+ "feed": {"slides": [
+  {"layout":"spotlight","activity":"restaurant","eyebrow":"Restaurant","headline":"Table for two? <em>Coming right up.</em>","body":"Take orders, count the coins, serve the snacks. No mess to tidy.","emoji":"🍓"},
+  {"layout":"checklist","activity":"home","eyebrow":"Peace of mind","headline":"Hand it over <em>with confidence</em>","bullets":["Works fully offline","No ads, ever","No in-app purchases","PIN-locked settings"]},
+  {"layout":"tablet","activity":"drawing","eyebrow":"On iPad too","headline":"Big screen, <em>bigger scribbles</em>","body":"Every activity stretches to fill the tablet."},
+  {"layout":"tip","activity":"timer","eyebrow":"Play tip","emoji":"⏳","headline":"Make tidy-up a race against the timer","body":"Let them set the visual timer themselves. Beat it, then swap who sets it."},
+  {"layout":"question","activity":"rescue","accent":"coral","emoji":"🚒","headline":"Fire engine, ambulance or police car?","body":"Which one does your little one pick first? 👇"},
+  {"layout":"price","activity":"transport","eyebrow":"One price","headline":"Once. <em>That's it.</em>","bullets":["No subscription","No ads","No in-app purchases"]}
+ ]},
+ "story": {"slides": [
+  {"layout":"spotlight","activity":"transport","eyebrow":"Trains & Buses","headline":"Tickets please! <em>All aboard</em> 🚂","body":"Print a pretend ticket and off to the seaside.","cta":"Tap the link"},
+  {"layout":"tip","activity":"clock","eyebrow":"Play tip","emoji":"🕰️","headline":"Learning the time? See both clocks at once","body":"The clock face and digital time sit side by side."}
+ ]},
+ "reel": {"scenes": [
+  {"layout":"question","activity":"rescue","accent":"coral","emoji":"🚨","headline":"New callout! A lost puppy at Biscuit Hill","body":"Who's on the case?","duration":2.6},
+  {"layout":"spotlight","activity":"rescue","eyebrow":"Rescue","headline":"Lights, siren, <em>go!</em>","body":"Send the right vehicle to every call.","emoji":"🐶","duration":3.2},
+  {"layout":"checklist","activity":"home","eyebrow":"For grown-ups","headline":"9 pretend-play activities","bullets":["Offline","No ads","£2.99 once"],"duration":3},
+  {"layout":"endcard","activity":"home","headline":"KidPad","duration":2.5}
+ ]}
+}
