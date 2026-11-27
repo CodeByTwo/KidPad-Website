@@ -1,0 +1,65 @@
+{
+ "pillar": "activity spotlight",
+ "feed": {
+  "kind": "reel",
+  "caption": "New callout! A lost puppy at Biscuit Hill 🐶\n\nIn KidPad's Rescue activity, little ones choose the right vehicle for each emergency, then switch on the lights and siren and race to help.\n\nFire engines, ambulances and police cars, all in one pocket-sized rescue centre. It works offline too, so it's ready for car journeys and waiting rooms.\n\n£2.99 once, no ads. Link in bio.",
+  "first_comment": "#pretendplay #toddleractivities #preschoollearning #kidsapps #learningthroughplay #ukparents #playbasedlearning #parentingtips #kidpad"
+ },
+ "reel": {
+  "scenes": [
+   {
+    "layout": "question",
+    "activity": "rescue",
+    "accent": "coral",
+    "emoji": "🚨",
+    "headline": "New callout! A lost puppy at Biscuit Hill",
+    "body": "Who's going to help?",
+    "duration": 2.6
+   },
+   {
+    "layout": "spotlight",
+    "activity": "rescue",
+    "eyebrow": "Rescue",
+    "headline": "Lights, siren, <em>go!</em>",
+    "body": "Pick the right vehicle for every call.",
+    "emoji": "🚒",
+    "duration": 3.2
+   },
+   {
+    "layout": "checklist",
+    "activity": "home",
+    "eyebrow": "For grown-ups",
+    "headline": "Nine pretend-play activities",
+    "bullets": [
+     "Works offline",
+     "No ads, ever",
+     "£2.99 once"
+    ],
+    "duration": 3
+   },
+   {
+    "layout": "endcard",
+    "activity": "home",
+    "headline": "KidPad",
+    "duration": 2.5
+   }
+  ]
+ },
+ "story": {
+  "slides": [
+   {
+    "layout": "spotlight",
+    "activity": "rescue",
+    "eyebrow": "Rescue",
+    "headline": "Nee-naw! <em>Who's on call?</em>",
+    "body": "Send the fire engine, ambulance or police car.",
+    "emoji": "🚑",
+    "cta": "Have a look"
+   }
+  ],
+  "alt": [
+   "Rescue activity on a phone with the headline Nee-naw! Who's on call?"
+  ]
+ },
+ "id": "2026-11-27"
+}

@@ -1,0 +1,61 @@
+{
+ "pillar": "play tip",
+ "feed": {
+  "kind": "reel",
+  "caption": "Tidy-up time, but make it a race ⏳\n\nLet your little one set KidPad's visual timer themselves, then try to beat it before every toy is back in the box. Next round, swap who sets the timer.\n\nIt helps them see time passing instead of hearing \"five more minutes\" on repeat.\n\nKidPad, £2.99 once. Link in bio.",
+  "first_comment": "#pretendplay #toddleractivities #preschoollearning #kidsapps #learningthroughplay #ukparents #playbasedlearning #parentingtips #kidpad"
+ },
+ "reel": {
+  "scenes": [
+   {
+    "layout": "question",
+    "activity": "timer",
+    "accent": "teal",
+    "emoji": "🧸",
+    "headline": "Tidy-up time again?",
+    "body": "Try this.",
+    "duration": 2.4
+   },
+   {
+    "layout": "tip",
+    "activity": "timer",
+    "accent": "teal",
+    "eyebrow": "Play tip",
+    "emoji": "⏳",
+    "headline": "Let them set the timer",
+    "body": "Beat it before the toys are away.",
+    "duration": 3.4
+   },
+   {
+    "layout": "spotlight",
+    "activity": "timer",
+    "eyebrow": "Timer",
+    "headline": "Watch time <em>tick down</em>",
+    "body": "A visual timer little ones set themselves.",
+    "duration": 3
+   },
+   {
+    "layout": "endcard",
+    "activity": "home",
+    "headline": "KidPad",
+    "duration": 2.5
+   }
+  ]
+ },
+ "story": {
+  "slides": [
+   {
+    "layout": "spotlight",
+    "activity": "timer",
+    "eyebrow": "Monday tip",
+    "headline": "Beat the <em>timer</em>",
+    "body": "Turn tidy-up into a race they want to win.",
+    "emoji": "🏁"
+   }
+  ],
+  "alt": [
+   "Timer activity on a phone, headline Beat the timer"
+  ]
+ },
+ "id": "2026-11-30"
+}

@@ -1,0 +1,36 @@
+{
+ "pillar": "conversation starter",
+ "feed": {
+  "kind": "single",
+  "slides": [
+   {
+    "layout": "question",
+    "activity": "restaurant",
+    "accent": "orange",
+    "emoji": "🍌",
+    "headline": "What's always on your little one's pretend menu?",
+    "body": "Ours keeps ordering bananas. Tell us yours 👇"
+   }
+  ],
+  "caption": "Sunday question 🍌\n\nIn KidPad's Restaurant, little chefs take orders and serve up snacks, drinks and fruit. Our testers order bananas every single time.\n\nWhat's always on the menu at your house's pretend café? Tell us in the comments.",
+  "first_comment": "#kidpad #learningthroughplay #toddlerlife #parentinguk #kidsapps #playideas #preschoollearning #mumlife #ukparents #pretendplay",
+  "alt": [
+   "Orange card asking what's always on your little one's pretend menu"
+  ]
+ },
+ "story": {
+  "slides": [
+   {
+    "layout": "tablet",
+    "activity": "restaurant",
+    "eyebrow": "Restaurant",
+    "headline": "Sunday service <em>is open</em>",
+    "body": "Take the order, count it up, serve it."
+   }
+  ],
+  "alt": [
+   "Restaurant activity on an iPad, headline Sunday service is open"
+  ]
+ },
+ "id": "2026-11-29"
+}

@@ -1,0 +1,69 @@
+{
+ "pillar": "activity spotlight",
+ "feed": {
+  "kind": "carousel",
+  "slides": [
+   {
+    "layout": "spotlight",
+    "activity": "transport",
+    "eyebrow": "Trains & Buses",
+    "headline": "Tickets, please! <em>All aboard</em>",
+    "body": "A pretend day out, any day of the week.",
+    "emoji": "🚂"
+   },
+   {
+    "layout": "tip",
+    "activity": "transport",
+    "accent": "blue",
+    "eyebrow": "Step one",
+    "emoji": "🎟️",
+    "headline": "Choose where to go",
+    "body": "The seaside? The zoo? Pick a trip and print a pretend ticket."
+   },
+   {
+    "layout": "tip",
+    "activity": "transport",
+    "accent": "teal",
+    "eyebrow": "Play idea",
+    "emoji": "🪑",
+    "headline": "Line up the chairs",
+    "body": "Turn the sofa into a train carriage and take turns being the conductor."
+   },
+   {
+    "layout": "price",
+    "activity": "transport",
+    "eyebrow": "One price",
+    "headline": "Once. <em>That's it.</em>",
+    "bullets": [
+     "No subscription",
+     "No ads",
+     "Works offline"
+    ]
+   }
+  ],
+  "caption": "Next stop: the seaside 🚂\n\nIn KidPad's Trains & Buses, little travellers pick a trip, print a pretend ticket and set off.\n\nTry taking it off the screen too. Line up some chairs, hand over the ticket and let them be the conductor. Then swap.\n\nKidPad is £2.99 once, with no subscription and no ads. Link in bio.",
+  "first_comment": "#kidpad #screentimedoneright #toddlermum #ukmums #rainydayactivities #pretendplay #earlylearning #kidsapps #preschoolactivities",
+  "alt": [
+   "Trains and Buses ticket screen with headline Tickets please, all aboard",
+   "Tip card: choose where to go and print a pretend ticket",
+   "Play idea card: line up the chairs and take turns being conductor",
+   "£2.99 once, no subscription, no ads, works offline"
+  ]
+ },
+ "story": {
+  "slides": [
+   {
+    "layout": "question",
+    "activity": "transport",
+    "accent": "blue",
+    "emoji": "🚌",
+    "headline": "Bus or train?",
+    "body": "Which does your little one pick?"
+   }
+  ],
+  "alt": [
+   "Blue card asking Bus or train?"
+  ]
+ },
+ "id": "2026-12-01"
+}

@@ -1,0 +1,74 @@
+{
+ "pillar": "peace of mind",
+ "feed": {
+  "kind": "carousel",
+  "slides": [
+   {
+    "layout": "spotlight",
+    "activity": "home",
+    "accent": "green",
+    "eyebrow": "Peace of mind",
+    "headline": "The app you can <em>hand over</em>",
+    "body": "What actually happens when they tap away.",
+    "emoji": "🤝"
+   },
+   {
+    "layout": "checklist",
+    "activity": "camera",
+    "accent": "blue",
+    "eyebrow": "No surprises",
+    "headline": "Nothing to buy, <em>nothing to click</em>",
+    "bullets": [
+     "No ads",
+     "No in-app purchases",
+     "No accounts or sign-ups"
+    ]
+   },
+   {
+    "layout": "checklist",
+    "activity": "drawing",
+    "accent": "purple",
+    "eyebrow": "Private by design",
+    "headline": "It all <em>stays on the device</em>",
+    "bullets": [
+     "Works fully offline",
+     "No tracking",
+     "Photos stay in KidPad's own gallery"
+    ]
+   },
+   {
+    "layout": "tip",
+    "activity": "home",
+    "accent": "yellow",
+    "eyebrow": "Grown-up tip",
+    "emoji": "🔒",
+    "headline": "Lock them in with Guided Access",
+    "body": "Our guides at kidpad.app show you how on iPhone, iPad and Android."
+   }
+  ],
+  "caption": "Screen time is easier to say yes to when you know exactly what's on the screen.\n\nKidPad has no ads, nothing to buy inside the app and no accounts. It works fully offline and doesn't track anything. Photos your little one takes stay in KidPad's own gallery, not your camera roll.\n\nSettings sit behind a grown-up PIN, and there are step-by-step guides on kidpad.app for locking the device to KidPad with Guided Access or App Pinning.\n\nSwipe through, then grab it via the link in bio.",
+  "first_comment": "#kidpad #screentimedoneright #toddlermum #ukmums #rainydayactivities #pretendplay #earlylearning #kidsapps #preschoolactivities",
+  "alt": [
+   "Hand it over headline with the KidPad home screen",
+   "Checklist: no ads, no in-app purchases, no accounts",
+   "Checklist: works offline, no tracking, photos stay in KidPad's gallery",
+   "Tip card about locking the device with Guided Access"
+  ]
+ },
+ "story": {
+  "slides": [
+   {
+    "layout": "question",
+    "activity": "home",
+    "accent": "green",
+    "emoji": "📵",
+    "headline": "Ads in kids' apps: yes or no?",
+    "body": "KidPad has none. Ever."
+   }
+  ],
+  "alt": [
+   "Green card asking Ads in kids' apps: yes or no?"
+  ]
+ },
+ "id": "2026-11-28"
+}
